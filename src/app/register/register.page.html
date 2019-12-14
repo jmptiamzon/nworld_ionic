@@ -1,0 +1,38 @@
+<ion-content class="content_background">
+  <div class="ion-padding">
+    <img src="assets/nworld_logo.png" id="logo_header">
+    <h3>Please choose below</h3>
+
+    <form>
+      <mat-form-field class="full-width">
+        <mat-label>Packages</mat-label>
+        <mat-select>
+          <mat-option>I want to register a Gold Package</mat-option>
+          <mat-option>I want to register a Basic Package(NI)</mat-option>
+          <mat-option>I want to register a Basic Package(PH/AE)</mat-option>
+          <mat-option>I want to register a Titanium Package</mat-option>
+          <mat-option>I want to register a Platinum Starter Package</mat-option>
+          <mat-option>I am a retailer, and I want to become a distributor.</mat-option>
+        </mat-select>
+        <mat-error *ngIf=""></mat-error>
+      </mat-form-field>
+
+      <p id="details">Please enter the details needed below, for verification:</p>
+      
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Your Gold Package NTC">
+        <mat-error *ngIf=""></mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Registration PIN you want to register">
+        <mat-error *ngIf=""></mat-error>
+      </mat-form-field>
+
+      <ion-button type="submit" expand="block" class="paddingBtn">Register</ion-button>
+    </form>
+
+    <p id="aftBtn">Already have an account ?  <a href="/home">Login here</a></p>
+
+  </div>
+</ion-content>

@@ -1,1 +1,43 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+#logo_header {
+    width: 300px; 
+    height: auto; 
+    display: block; 
+    margin: auto;
+    margin-top: 100px;
+}
+
+ion-content.content_background {
+    --background: url('../../assets/bg.png') 0 0;
+}
+
+h3 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 100;
+    color: #234C9A;
+    padding-top: 15vh;
+    padding-left: 5vw;
+}
+
+.full-width {
+    width: 100%;
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+
+ion-button.paddingBtn {
+    margin-top: 3vh;
+    padding-left: 4vw;
+    padding-right: 4vw;
+}
+
+p {
+    padding-top: 1vh;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    text-align: center;
+    font-weight: bold;
+}
+
 

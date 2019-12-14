@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Network</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="content_background">
+  <h3>Genealogy</h3>
+  <ion-badge color="primary" style="margin-left: 2vw; margin-right: 2vw;">Platinum</ion-badge>
+  <ion-badge color="secondary" style="margin-right: 2vw;">Platinum1</ion-badge>
+  <ion-badge color="medium" style="margin-right: 2vw;">PSP</ion-badge>
+  <ion-badge color="light" style="margin-right: 2vw;">PSP1</ion-badge>
+  <ion-badge color="medium" style="margin-right: 2vw;">Supreme</ion-badge>
+  <ion-badge color="warning">Others</ion-badge>
+
+  <ion-card class="bgCard">
+    <div id="org_container"></div>
+  </ion-card>
+
+  
+  <mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+  </mat-form-field>
+  
+  <ion-card class="bgCard"> 
+    <div class="mat-elevation-z8">
+      <table mat-table [dataSource]="dataSource" matSort>
+    
+        <!-- ID Column -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+          <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+        </ng-container>
+    
+        <!-- Progress Column -->
+        <ng-container matColumnDef="progress">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Progress </th>
+          <td mat-cell *matCellDef="let row"> {{row.progress}}% </td>
+        </ng-container>
+    
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+          <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+        </ng-container>
+    
+        <!-- Color Column -->
+        <ng-container matColumnDef="color">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Color </th>
+          <td mat-cell *matCellDef="let row" [style.color]="row.color"> {{row.color}} </td>
+        </ng-container>
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+        </tr>
+      </table>
+    
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+    </div>
+  </ion-card>
+
+</ion-content>

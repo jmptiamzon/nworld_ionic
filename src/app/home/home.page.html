@@ -1,14 +1,27 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
+<ion-content class="content_background">
   <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+    <img src="assets/nworld_logo.png" id="logo_header">
+    <h3>MEMBER LOGIN</h3>
+
+    <form>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Username" value="">
+        <mat-error *ngIf=""></mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        <mat-error *ngIf=""></mat-error>
+      </mat-form-field>
+
+      <!--<ion-button type="submit" expand="block" class="paddingBtn">Login</ion-button>-->
+      <ion-button href="/menu" expand="block" class="paddingBtn">Login</ion-button>
+    </form>
+
+    <p>Don't have an account yet ?  <a href="/register">Create an account</a></p>
+
   </div>
 </ion-content>

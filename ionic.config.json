@@ -1,5 +1,7 @@
 {
   "name": "nworld-ionic",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
