@@ -8,5 +8,133 @@
 </ion-header>
 
 <ion-content class="content_background">
+  <form>
+    <ion-card class="cardBg">
+      <ion-card-header>
+        <ion-card-title>Personal Information</ion-card-title>
+        <ion-card-subtitle>Enter your personal info below:</ion-card-subtitle>
+      </ion-card-header>
+
+      <mat-form-field class="full-width">
+        <mat-icon matSuffix>text_fields</mat-icon>
+        <input matInput placeholder="First name" value="">
+        <mat-error *ngIf=""></mat-error>
+      </mat-form-field>
+  
+      <mat-form-field class="full-width">
+        <mat-icon matSuffix>text_fields</mat-icon>
+        <input matInput placeholder="Last name" value="">
+        <mat-error *ngIf=""></mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input matInput [matDatepicker]="picker" placeholder="Birthdate">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf=""></mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <mat-icon matSuffix>account_circle</mat-icon>
+        <mat-label>Gender</mat-label>
+        <mat-select>
+          <mat-option>Male</mat-option>
+          <mat-option>Female</mat-option>
+        </mat-select>
+        <mat-error *ngIf=""></mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <mat-icon matSuffix>phone</mat-icon>
+        <input matInput placeholder="Mobile number" value="">
+        <mat-error *ngIf=""></mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <mat-icon matSuffix>home</mat-icon>
+        <input matInput placeholder="Home address" value="">
+        <mat-error *ngIf=""></mat-error>
+      </mat-form-field>
+    </ion-card>
+
+    <ion-card class="cardBg">
+      <ion-card-header>
+        <ion-card-title>Network Information</ion-card-title>
+        <ion-card-subtitle>Enter your network info below:</ion-card-subtitle>
+      </ion-card-header>
+
+      <mat-form-field class="full-width">
+        <mat-icon matSuffix>perm_identity</mat-icon>
+        <input matInput placeholder="Sponsor ID" value="">
+        <mat-error *ngIf=""></mat-error>
+      </mat-form-field>
+  
+      <mat-form-field class="full-width">
+        <mat-icon matSuffix>perm_identity</mat-icon>
+        <input matInput placeholder="Upline ID" value="">
+        <mat-error *ngIf=""></mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <mat-icon matSuffix>supervised_user_circle</mat-icon>
+        <mat-label>Position</mat-label>
+        <mat-select>
+          <mat-option>Pos 1</mat-option>
+          <mat-option>Pos 2</mat-option>
+        </mat-select>
+        <mat-error *ngIf=""></mat-error>
+      </mat-form-field>
+    </ion-card>
+
+    <ion-card class="cardBg">
+      <ion-card-header>
+        <ion-card-title>Account Details</ion-card-title>
+        <ion-card-subtitle>Enter your account details below:</ion-card-subtitle>
+      </ion-card-header>
+
+      <mat-form-field class="full-width">
+        <mat-icon matSuffix>perm_identity</mat-icon>
+        <input matInput placeholder="Username" value="">
+        <mat-error *ngIf=""></mat-error>
+      </mat-form-field>
+  
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        <mat-error *ngIf=""></mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Confirm Password" [type]="hide2 ? 'password' : 'text'">
+        <button mat-icon-button matSuffix (click)="hide2 = !hide2" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide2 ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        <mat-error *ngIf=""></mat-error>
+      </mat-form-field>
+    </ion-card>
+
+    <ion-card class="cardBg">
+      <ion-card-header>
+        <ion-card-title>Activation Details</ion-card-title>
+        <ion-card-subtitle>Enter your activation details below (See scratch card):</ion-card-subtitle>
+      </ion-card-header>
+
+      <mat-form-field class="full-width">
+        <mat-icon matSuffix>perm_identity</mat-icon>
+        <input matInput placeholder="User ID" value="">
+        <mat-error *ngIf=""></mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <mat-icon matSuffix>fiber_pin</mat-icon>
+        <input matInput placeholder="Registration Pin" value="">
+        <mat-error *ngIf=""></mat-error>
+      </mat-form-field>
+    </ion-card>
+    
+    <ion-button href="/menu" expand="block" class="paddingBtn">Sign Up</ion-button>
+  </form>
 
 </ion-content>

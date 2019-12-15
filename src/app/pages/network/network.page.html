@@ -19,8 +19,8 @@
   <ion-card class="bgCard" id="style-1" style="overflow-x: auto;">
     <div id="org_container"></div>
   </ion-card>
+  <ion-button expand="block" (click)="reset()" class="paddingBtn">Reset Chart</ion-button>
 
-  
   <mat-form-field>
     <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
   </mat-form-field>

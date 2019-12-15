@@ -8,6 +8,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 import { RegistrationPageRoutingModule } from './registration-routing.module';
 
@@ -23,8 +25,13 @@ import { RegistrationPage } from './registration.page';
     MatIconModule,
     MatButtonModule,
     MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     RegistrationPageRoutingModule
   ],
-  declarations: [RegistrationPage]
+  declarations: [RegistrationPage],
+  providers: [
+    MatDatepickerModule,
+  ]
 })
 export class RegistrationPageModule {}
