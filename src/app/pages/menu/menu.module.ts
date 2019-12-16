@@ -7,12 +7,14 @@ import { IonicModule } from '@ionic/angular';
 import { MenuPageRoutingModule } from './menu-routing.module';
 
 import { MenuPage } from './menu.page';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    MatIconModule,
     MenuPageRoutingModule
   ],
   declarations: [MenuPage],

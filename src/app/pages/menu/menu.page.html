@@ -10,6 +10,7 @@
       <ion-list>
         <ion-menu-toggle auto-hide="false" *ngFor="let page of pages">
           <ion-item [routerLink]="page.url" routerDirection="root" [class.active-item]="selectedPath === page.url">
+            <mat-icon style="margin-right: 2vw;">{{ page.icon }}</mat-icon>
             {{ page.title }}
           </ion-item>
         </ion-menu-toggle>

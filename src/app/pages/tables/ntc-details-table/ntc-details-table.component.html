@@ -1,0 +1,20 @@
+<table mat-table [dataSource]="dataSource" matSort>
+  <ng-container matColumnDef="upgrade">
+    <th mat-header-cell *matHeaderCellDef> Upgrade Status: </th>
+    <td mat-cell *matCellDef="let row"> {{row.upgrade}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="uae">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> UAE </th>
+    <td mat-cell *matCellDef="let row"> {{row.uae}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="nigeria">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Nigeria </th>
+    <td mat-cell *matCellDef="let row"> {{row.nigeria}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+  </tr>
+</table>

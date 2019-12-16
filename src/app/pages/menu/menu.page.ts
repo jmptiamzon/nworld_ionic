@@ -10,23 +10,28 @@ export class MenuPage implements OnInit {
   pages = [
     {
       title: 'Dashboard',
-      url: '/menu/menu/dashboard'
+      url: '/menu/menu/dashboard',
+      icon: 'dashboard'
     },
     {
       title: 'Network',
-      url: '/menu/menu/network'
+      url: '/menu/menu/network',
+      icon: 'supervisor_account'
     },
     {
       title: 'Registration',
-      url: '/menu/menu/registration'
+      url: '/menu/menu/registration',
+      icon: 'dashboard'
     },
     {
       title: 'Encashment',
-      url: '/menu/menu/encashment'
+      url: '/menu/menu/encashment',
+      icon: 'money'
     },
     {
       title: 'Logout',
-      url: '/'
+      url: '/',
+      icon: 'exit_to_app'
     }
   ];
 

@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+ion-content.content_background {
+    --background: url('../../../assets/bg.png') 0 0;
+}
+
+ion-card.backgroundColor {
+    background-color: white;
+    padding: 20px;
+}
+
+p {
+    font-family: 'Open-Sans', sans-serif;
+}
+
+table {
+    width: 100%;
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+  
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+    padding-left: 3vw;
+    padding-right: 3vw;
+}
+  
+td, th {
+    width: 25%;
+}
