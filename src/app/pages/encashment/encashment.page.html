@@ -1,0 +1,135 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Encashment</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="content_background">
+  <ion-card class="backgroundColor">
+    <ion-card-title>Available Balance: </ion-card-title>
+    <ion-card-content>
+      <h1><b>₱ 325.10</b></h1>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="backgroundColor">
+    <ion-card-title>Encashment </ion-card-title>
+    <ion-card-subtitle><b>Encash Commission</b> </ion-card-subtitle>
+
+    <br>
+
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Address" value="">
+      <mat-error *ngIf=""></mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Email" value="">
+      <mat-error *ngIf=""></mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Mobile Number" value="">
+      <mat-error *ngIf=""></mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Amount" value="">
+      <mat-error *ngIf=""></mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>Type</mat-label>
+      <mat-select>
+        <mat-option value="Cheque">Cheque</mat-option>
+      </mat-select>
+      <mat-error *ngIf=""></mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>Destination Branch</mat-label>
+      <mat-select>
+        <mat-option value="NWorld Ortigas">NWorld Ortigas</mat-option>
+      </mat-select>
+      <mat-error *ngIf=""></mat-error>
+    </mat-form-field>
+
+    <br>
+
+    <ion-button href="menu/menu/dashboard" expand="block" class="paddingBtn">Encashment</ion-button>
+    <ion-button href="menu/menu/dashboard" expand="block" class="paddingBtn">Pay-out to products</ion-button>
+  </ion-card>
+
+  <ion-card class="backgroundColor">
+    <ion-card-title>Encashment History </ion-card-title>
+    
+    <br>
+    
+    <mat-form-field class="full-width">
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+    </mat-form-field>
+
+    <br>
+
+    <div class="mat-elevation-z8" style="overflow-x: auto;">
+      <table mat-table [dataSource]="dataSource" matSort>
+        <ng-container matColumnDef="ref">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Reference </th>
+          <td mat-cell *matCellDef="let row"> {{row.reference}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="date">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Date </th>
+          <td mat-cell *matCellDef="let row"> {{row.date}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="fname">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Full Name </th>
+          <td mat-cell *matCellDef="let row"> {{row.fname}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="type">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Type </th>
+          <td mat-cell *matCellDef="let row"> {{row.type}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="branch">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Branch </th>
+          <td mat-cell *matCellDef="let row"> {{row.branch}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="account">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Account Number </th>
+          <td mat-cell *matCellDef="let row"> {{row.accountn}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="gross">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Gross </th>
+          <td mat-cell *matCellDef="let row"> {{row.gross}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="net">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Net </th>
+          <td mat-cell *matCellDef="let row"> {{row.net}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="redemp">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Redemption Status </th>
+          <td mat-cell *matCellDef="let row"> 
+            <ion-icon name="{{row.redemption}}"></ion-icon>
+          </td>
+        </ng-container>
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+        </tr>
+      </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" style="overflow-x: auto;"></mat-paginator>
+  </div>
+  </ion-card>
+  
+
+</ion-content>

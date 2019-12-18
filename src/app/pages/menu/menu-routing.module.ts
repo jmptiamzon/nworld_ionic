@@ -10,16 +10,20 @@ const routes: Routes = [
     children: [
       {
         path: 'dashboard',
-        loadChildren: () => import('../dashboard/dashboard.module').then( m => m.DashboardPageModule)
+        loadChildren: () => import('../dashboard/dashboard.module').then( m => m.DashboardPageModule )
       },
       {
         path: 'network',
-        loadChildren: () => import('../network/network.module').then( m => m.NetworkPageModule)
+        loadChildren: () => import('../network/network.module').then( m => m.NetworkPageModule )
       },
       {
         path: 'registration',
-        loadChildren: () => import('../registration/registration.module').then( m => m.RegistrationPageModule)
-      }
+        loadChildren: () => import('../registration/registration.module').then( m => m.RegistrationPageModule )
+      },
+      {
+        path: 'encashment',
+        loadChildren: () => import('../encashment/encashment.module').then( m => m.EncashmentPageModule )
+      },
     ],
   },
   {

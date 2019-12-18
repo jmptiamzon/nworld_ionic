@@ -13,27 +13,20 @@ p {
     font-family: 'Open-Sans', sans-serif;
 }
 
-table {
+h1 {
+    font-family: 'Open-Sans', sans-serif;
+}
+
+.full-width {
     width: 100%;
     padding-left: 5vw;
     padding-right: 5vw;
 }
-  
-.mat-form-field {
-    font-size: 14px;
+
+table {
     width: 100%;
-    padding-left: 3vw;
-    padding-right: 3vw;
 }
   
 td, th {
     width: 25%;
 }
-
-/*
-.mat-footer-row,
-.mat-header-row,
-.mat-row {
-    display: inline-flex;
-    min-width: 100%;
-}  */

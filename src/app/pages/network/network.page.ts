@@ -3,6 +3,7 @@ import { GoogleCharts } from 'google-charts';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { LoadingController } from '@ionic/angular';
 
 export interface UserData {
   id: number;
@@ -29,13 +30,17 @@ const NAMES: string[] = [
   styleUrls: ['./network.page.scss'],
 })
 export class NetworkPage implements OnInit {
+  loaderToShow: any;
   displayedColumns: string[] = ['id', 'name', 'country', 'left', 'right', 'sponsor'];
   dataSource: MatTableDataSource<UserData>;
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
-  constructor() {
+  constructor(
+    public loadingController: LoadingController
+  ) {
+    this.showLoader();
     // Create 100 users
     // const users = Array.from({length: 100}, (_, k) => createNewUser(k + 1));
     const users = [
@@ -57,6 +62,25 @@ export class NetworkPage implements OnInit {
     this.reset();
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
+  }
+
+  showLoader() {
+    this.loaderToShow = this.loadingController.create({
+      message: 'Please wait...'
+    }).then((res) => {
+      res.present();
+
+      res.onDidDismiss().then((dis) => {
+        // console.log('Loading dismissed!');
+      });
+    });
+    this.hideLoader();
+  }
+
+  hideLoader() {
+    setTimeout(() => {
+      this.loadingController.dismiss();
+    }, 4000);
   }
 
   applyFilter(filterValue: string) {

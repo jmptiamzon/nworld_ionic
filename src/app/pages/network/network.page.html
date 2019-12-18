@@ -25,8 +25,8 @@
     <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
   </mat-form-field>
   
-  <ion-card class="bgCard" style="overflow-x: auto;"> 
-    <div class="mat-elevation-z8">
+  <ion-card class="bgCard"> 
+    <div class="mat-elevation-z8" style="overflow-x: auto;">
       <table mat-table [dataSource]="dataSource" matSort>
     
         <ng-container matColumnDef="id">
@@ -64,7 +64,7 @@
         </tr>
       </table>
     </div>
-    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" style="overflow-x: auto;"></mat-paginator>
   </ion-card>
 
 </ion-content>
